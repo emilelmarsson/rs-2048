@@ -14,9 +14,20 @@ pub enum Dir{
 #[derive(Debug)]
 pub struct Board{
     pub tiles: [[u32; BOARD_SIZE]; BOARD_SIZE],
+
+    current_move_index: usize,
+    moves: Vec<[[u32; BOARD_SIZE]; BOARD_SIZE]>,
 }
 
 impl Board{
+    fn undo(&mut self){
+        
+    }
+
+    fn redo(&mut self){
+        
+    }
+
     fn set_column(&mut self, col_index: usize, column: &[u32; 4]){
         for i in 0..BOARD_SIZE{
             self.tiles[i][col_index] = column[i];
